@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rohit's Internship – Pragati Engineering Belagavi | Industrial Training 2026</title>
+  <meta name="description" content="Rohit's internship experience at Pragati Engineering Belagavi Pvt Ltd – covering TPM, Quality, Assembly, PPC, and Infor LN ERP. A complete industrial training diary from Feb–Apr 2026." />
+  <meta name="keywords" content="Rohit internship, Pragati Engineering Belagavi internship, TPM internship, PPC internship, mechanical engineering internship, Infor LN, industrial training 2026" />
+  <meta name="author" content="Rohit" />
+  <meta property="og:title" content="Rohit's Internship at Pragati Engineering Belagavi" />
+  <meta property="og:description" content="A detailed industrial internship diary covering TPM, 5S, Assembly, PPC, ERP (Infor LN) and more." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0a0d12;
+      --surface: #111520;
+      --surface2: #161c2b;
+      --accent: #f0a500;
+      --accent2: #e05c2a;
+      --text: #e8eaf0;
+      --muted: #7a84a0;
+      --border: rgba(240,165,0,0.18);
+      --glow: rgba(240,165,0,0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    /* ── GRAIN OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9999; opacity: .45;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(240,165,0,0.1) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(224,92,42,0.07) 0%, transparent 60%),
+        var(--bg);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(240,165,0,0.04) 60px),
+        repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(240,165,0,0.04) 60px);
+      pointer-events: none;
+    }
+
+    .tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      color: var(--accent);
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(5rem, 16vw, 14rem);
+      line-height: 0.9;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+
+    .hero-name span {
+      -webkit-text-stroke: 2px var(--accent);
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      color: var(--muted);
+      margin-top: 1rem;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+
+    .hero-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 1.5rem;
+      letter-spacing: 0.1em;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    .hero-meta strong { color: var(--accent); }
+
+    .scroll-hint {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem;
+      letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;
+      animation: fadeUp 1s 1s ease both;
+    }
+
+    .scroll-hint::after {
+      content: '';
+      width: 1px; height: 50px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: pulse 2s infinite;
+    }
+
+    /* ── STATS BAR ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat {
+      background: var(--surface);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .stat:hover { background: var(--surface2); }
+
+    .stat::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      transform: scaleX(0);
+      transition: transform 0.4s;
+    }
+
+    .stat:hover::before { transform: scaleX(1); }
+
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.5rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+    }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1;
+      margin-bottom: 3rem;
+    }
+
+    /* ── PHASE TIMELINE ── */
+    .phases {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .phase {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 0;
+      background: var(--border);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .phase.visible { opacity: 1; transform: translateY(0); }
+
+    .phase-left {
+      background: var(--surface);
+      padding: 2.5rem 2rem;
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phase-left::before {
+      content: '';
+      position: absolute; top: 0; left: 0; bottom: 0; width: 3px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent2));
+    }
+
+    .phase-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .phase-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .phase-dates {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    .phase-right {
+      background: var(--surface2);
+      padding: 2.5rem 2.5rem;
+    }
+
+    .phase-desc {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .phase-tags {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+
+    .ptag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+      text-transform: uppercase;
+      background: var(--glow);
+    }
+
+    /* ── DAILY LOG ── */
+    .log-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .log-card {
+      background: var(--surface);
+      padding: 1.8rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s, transform 0.3s;
+      cursor: default;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s;
+    }
+
+    .log-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .log-card:hover { background: var(--surface2); }
+
+    .log-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .log-card:hover::after { transform: scaleX(1); }
+
+    .log-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .log-dept {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+
+    .log-text {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .log-learn {
+      margin-top: 0.8rem;
+      padding: 0.6rem 0.8rem;
+      background: var(--glow);
+      border-left: 2px solid var(--accent);
+      font-size: 0.78rem;
+      color: var(--text);
+      font-style: italic;
+    }
+
+    /* ── SKILLS RADAR ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .skill-item {
+      background: var(--surface);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .skill-item.visible { opacity: 1; transform: translateY(0); }
+
+    .skill-name {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .skill-bar-wrap {
+      height: 3px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 2px;
+      width: 0;
+      transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .skill-pct {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--accent);
+    }
+
+    /* ── QUOTE ── */
+    .quote-section {
+      text-align: center;
+      padding: 8rem 2rem;
+      position: relative;
+      background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(240,165,0,0.05) 0%, transparent 70%);
+    }
+
+    .big-quote {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      line-height: 1.4;
+      color: var(--text);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .big-quote span { color: var(--accent); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+      text-align: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    footer strong { color: var(--accent); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.3; }
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 3rem;
+      background: rgba(10,13,18,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex; gap: 2.5rem; list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 0 2rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .phase { grid-template-columns: 1fr; }
+      .phase-left { border-right: none; border-bottom: 1px solid var(--border); }
+      nav { padding: 1rem; }
+      .nav-links { gap: 1.2rem; }
+      .nav-links a { font-size: 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">ROHIT × INTERNSHIP</div>
+  <ul class="nav-links">
+    <li><a href="#phases">Phases</a></li>
+    <li><a href="#log">Daily Log</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="tag">Industrial Internship · Feb – Apr 2026</div>
+  <h1 class="hero-name">ROHIT<br><span>INTERN</span></h1>
+  <p class="hero-sub">Pragati Engineering Belagavi Pvt Ltd</p>
+  <p class="hero-meta">
+    <strong>Belagavi, Karnataka</strong> &nbsp;·&nbsp; Mechanical Engineering &nbsp;·&nbsp;
+    <strong>84 Working Days</strong>
+  </p>
+  <div class="scroll-hint">Scroll</div>
+</header>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">84</div>
+    <div class="stat-label">Work Days</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">672</div>
+    <div class="stat-label">Hours Logged</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">6</div>
+    <div class="stat-label">Departments</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">8</div>
+    <div class="stat-label">TPM Pillars Learned</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">1</div>
+    <div class="stat-label">ERP System Mastered</div>
+  </div>
+</div>
+
+<!-- PHASES -->
+<section id="phases">
+  <div class="section-label">Journey Overview</div>
+  <h2 class="section-title">INTERNSHIP<br>PHASES</h2>
+
+  <div class="phases">
+
+    <div class="phase">
+      <div class="phase-left">
+        <div class="phase-icon">🏭</div>
+        <div class="phase-title">Orientation & Departments</div>
+        <div class="phase-dates">02 FEB – 07 FEB 2026</div>
+      </div>
+      <div class="phase-right">
+        <p class="phase-desc">Joined Pragati Engineering on Feb 2, 2026. Completed joining formalities and attended company orientation covering organizational structure, safety guidelines, products, and client overview. Rotated through Quality, Design, Maintenance, and Production departments to gain broad exposure to manufacturing operations.</p>
+        <div class="phase-tags">
+          <span class="ptag">Orientation</span>
+          <span class="ptag">Quality Control</span>
+          <span class="ptag">CAD & Design</span>
+          <span class="ptag">Production Floor</span>
+          <span class="ptag">Maintenance</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-left">
+        <div class="phase-icon">⚙️</div>
+        <div class="phase-title">TPM Deep Dive</div>
+        <div class="phase-dates">09 FEB – 28 FEB 2026</div>
+      </div>
+      <div class="phase-right">
+        <p class="phase-desc">Assigned to the TPM Department under Santosh Sir. Conducted an in-depth study of Total Productive Maintenance — all 8 pillars, 5S methodology, Jishu Hozen (Autonomous Maintenance), OEE concepts, and the KK Pillar. Applied learnings by visiting production zones and interacting with zone leaders for real-time feedback.</p>
+        <div class="phase-tags">
+          <span class="ptag">5S Methodology</span>
+          <span class="ptag">8 TPM Pillars</span>
+          <span class="ptag">KK Pillar</span>
+          <span class="ptag">OEE</span>
+          <span class="ptag">Autonomous Maintenance</span>
+          <span class="ptag">Zone Audits</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-left">
+        <div class="phase-icon">🔩</div>
+        <div class="phase-title">Assembly Operations</div>
+        <div class="phase-dates">16 FEB – 21 FEB 2026</div>
+      </div>
+      <div class="phase-right">
+        <p class="phase-desc">Moved to the Assembly Department under Mr. Sandeep Patil and Shobha Ma'am. Studied and assisted in the SQTP assembly process — from component fitting and alignment to torque application, final inspection, and post-assembly documentation. Observed quality verification and testing procedures on the completed unit.</p>
+        <div class="phase-tags">
+          <span class="ptag">SQTP Assembly</span>
+          <span class="ptag">Mechanical Fitting</span>
+          <span class="ptag">Torque & Alignment</span>
+          <span class="ptag">Final Inspection</span>
+          <span class="ptag">Assembly Documentation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-left">
+        <div class="phase-icon">📋</div>
+        <div class="phase-title">Machine Auditing</div>
+        <div class="phase-dates">02 MAR – 21 MAR 2026</div>
+      </div>
+      <div class="phase-right">
+        <p class="phase-desc">Conducted extensive machine audits across multiple production zones using the Jishu Hozen Initial Cleaning Diagnosis Sheet. Inspected machine cleanliness, lubrication systems, electrical components, safety systems (emergency stops, guards), and performance indicators like vibration and noise. Compiled detailed audit reports with defect classification by severity.</p>
+        <div class="phase-tags">
+          <span class="ptag">Jishu Hozen</span>
+          <span class="ptag">Machine Inspection</span>
+          <span class="ptag">Lubrication Checks</span>
+          <span class="ptag">Electrical Audit</span>
+          <span class="ptag">Safety Systems</span>
+          <span class="ptag">Defect Classification</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-left">
+        <div class="phase-icon">📊</div>
+        <div class="phase-title">PPC Department</div>
+        <div class="phase-dates">24 MAR – 13 APR 2026</div>
+      </div>
+      <div class="phase-right">
+        <p class="phase-desc">Joined the Production Planning and Control (PPC) department. Studied planning, routing, scheduling, dispatching, and corrective actions. Took on active responsibilities including vendor follow-up calls, tracking job return schedules, attending planning meetings with the HOD, and learning Infor LN ERP — creating POs, working with BOM, and preparing weekly production documentation.</p>
+        <div class="phase-tags">
+          <span class="ptag">Production Planning</span>
+          <span class="ptag">Vendor Follow-up</span>
+          <span class="ptag">Infor LN ERP</span>
+          <span class="ptag">Purchase Orders</span>
+          <span class="ptag">BOM</span>
+          <span class="ptag">Scheduling</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-left">
+        <div class="phase-icon">💻</div>
+        <div class="phase-title">Infor LN Advanced</div>
+        <div class="phase-dates">14 APR – 25 APR 2026</div>
+      </div>
+      <div class="phase-right">
+        <p class="phase-desc">Deep-dived into advanced Infor LN ERP modules — creating and modifying routing operations, production entries, labour contracts, and operation cancellations. Also studied the DC (Delivery Challan) register for vendor material tracking, used Inventory 360 for real-time stock visibility, and learned planning purchase order transfers to ensure future material availability.</p>
+        <div class="phase-tags">
+          <span class="ptag">Routing in ERP</span>
+          <span class="ptag">Production Entry</span>
+          <span class="ptag">Labour Contracts</span>
+          <span class="ptag">DC Register</span>
+          <span class="ptag">Inventory 360</span>
+          <span class="ptag">Planning Transfers</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- QUOTE -->
+<div class="quote-section">
+  <p class="big-quote">
+    "From the shop floor to the ERP screen — every day taught me that <span>engineering is not just about machines</span>, it's about the people, processes, and precision behind them."
+  </p>
+</div>
+
+<!-- DAILY LOG -->
+<section id="log" style="max-width:1400px">
+  <div class="section-label">Day-by-Day</div>
+  <h2 class="section-title">DAILY<br>WORK LOG</h2>
+
+  <div class="log-grid" id="logGrid"></div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">What I Gained</div>
+  <h2 class="section-title">SKILLS &amp;<br>KNOWLEDGE</h2>
+
+  <div class="skills-grid">
+    <div class="skill-item">
+      <div class="skill-name">TPM & 5S Implementation</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-pct="90"></div></div>
+      <div class="skill-pct">90%</div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-name">Machine Auditing</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-pct="85"></div></div>
+      <div class="skill-pct">85%</div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-name">SQTP Assembly</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-pct="80"></div></div>
+      <div class="skill-pct">80%</div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-name">Production Planning (PPC)</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-pct="85"></div></div>
+      <div class="skill-pct">85%</div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-name">Infor LN ERP</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-pct="78"></div></div>
+      <div class="skill-pct">78%</div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-name">Vendor Coordination</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-pct="75"></div></div>
+      <div class="skill-pct">75%</div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-name">Quality Control & Inspection</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-pct="82"></div></div>
+      <div class="skill-pct">82%</div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-name">Root Cause Analysis</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-pct="70"></div></div>
+      <div class="skill-pct">70%</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="text-align:center; padding: 6rem 2rem;">
+  <div class="section-label">The Intern</div>
+  <h2 class="section-title" style="margin-bottom:1.5rem">ABOUT<br>ROHIT</h2>
+  <p style="color:var(--muted); max-width:650px; margin:0 auto; font-size:1rem; line-height:1.9;">
+    Mechanical Engineering student who completed a full industrial internship at
+    <strong style="color:var(--accent)">Pragati Engineering Belagavi Pvt Ltd</strong> between
+    February and April 2026. Gained hands-on experience across six departments —
+    Quality, Design, TPM, Assembly, Machine Auditing, and PPC — and actively worked
+    on the company's Infor LN ERP system performing routing, production entry, and
+    procurement tasks.
+  </p>
+  <br><br>
+  <p style="font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:var(--muted); letter-spacing:0.15em;">
+    📍 Belagavi, Karnataka &nbsp;·&nbsp; 🎓 Mechanical Engineering &nbsp;·&nbsp; 📅 Feb – Apr 2026
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong>Rohit's Internship Portfolio</strong> · Pragati Engineering Belagavi Pvt Ltd · All rights reserved</p>
+  <p style="margin-top:0.5rem">Built with passion after 84 days on the shop floor.</p>
+</footer>
+
+<script>
+  // ── LOG DATA ──
+  const entries = [
+    { date:"2026-02-02", dept:"Orientation", summary:"Completed joining formalities, HR induction, company overview, safety guidelines and organizational introduction.", learning:"Company structure, workflow, safety rules, products and manufacturing operations." },
+    { date:"2026-02-03", dept:"Quality Dept", summary:"Observed inspection of raw materials and finished products. Studied Vernier caliper, micrometer, height gauge, and surface roughness tester.", learning:"Quality control procedures, inspection methods, dimensional accuracy standards." },
+    { date:"2026-02-04", dept:"Design Dept", summary:"Observed CAD-based component drawing creation, 2D drawings, part modeling, assembly drawings, and design change implementation.", learning:"Design workflow, drawing standards, and precision in engineering design." },
+    { date:"2026-02-05", dept:"TPM Basics", summary:"Studied TPM pillars — Autonomous Maintenance, Planned Maintenance, Quality Maintenance. Observed cleaning, inspection, and lubrication routines.", learning:"Preventive maintenance, machine efficiency, and reducing downtime through TPM." },
+    { date:"2026-02-06", dept:"Production Floor", summary:"Observed complete production flow from raw material to finished product. Studied machining operations, assembly processes, cycle time, and production planning.", learning:"Production planning, workflow management, and departmental coordination." },
+    { date:"2026-02-07", dept:"Maintenance Dept", summary:"Observed machine troubleshooting and preventive maintenance. Studied common failures, corrective actions, lubrication schedules, and breakdown analysis.", learning:"Machine maintenance procedures, root cause analysis, regular inspection importance." },
+    { date:"2026-02-09", dept:"TPM Dept", summary:"Assigned to TPM Department under Santosh Sir. Received detailed introduction to TPM concepts, OEE, workplace discipline, and breakdown reduction objectives.", learning:"TPM objectives and its role in improving production efficiency and minimizing downtime." },
+    { date:"2026-02-10", dept:"5S Methodology", summary:"Studied the 5S framework: Sort, Set in Order, Shine, Standardize, Sustain. Observed shop floor zones implementing 5S.", learning:"How 5S improves workplace organization, safety, and operational efficiency." },
+    { date:"2026-02-11", dept:"8 TPM Pillars", summary:"Studied all 8 TPM pillars including Autonomous Maintenance, Planned Maintenance, Quality Maintenance, Focused Improvement, EEM, Training, SHE, and Office TPM.", learning:"Detailed knowledge of all 8 TPM pillars and their practical implementation." },
+    { date:"2026-02-12", dept:"TPM Review", summary:"Reviewed homework on 5S and 8 pillars with Santosh Sir. Clarified doubts with real-time shop floor examples. Studied TPM checklists and audit formats.", learning:"TPM audits, documentation, and implementation strategies." },
+    { date:"2026-02-13", dept:"Zone Visits", summary:"Visited production zones and interacted with zone leaders to understand TPM activity status. Most zones reported smooth TPM operations.", learning:"TPM monitoring at zone level and communication in continuous improvement." },
+    { date:"2026-02-14", dept:"Daily TPM", summary:"Observed daily TPM activities — cleaning, lubrication, inspection, and checklist verification across different production zones.", learning:"Practical implementation of TPM on the shop floor." },
+    { date:"2026-02-16", dept:"Assembly Dept", summary:"Introduced to SQTP assembly process under Mr. Sandeep Patil and Shobha Ma'am. Studied components, working principle, and operation sequence.", learning:"Basic structure of SQTP, assembly workflow and safety procedures." },
+    { date:"2026-02-17", dept:"SQTP Assembly", summary:"Observed the complete SQTP assembly — fitting components, alignment procedures, fastening methods, and in-process quality checks.", learning:"Step-by-step assembly sequence and importance of precision in operations." },
+    { date:"2026-02-18", dept:"SQTP Assembly", summary:"Assisted in SQTP assembly under supervision. Observed pre-assembly inspection, torque maintenance, tool handling, and safety practices.", learning:"Practical exposure to assembly operations and mechanical fitting." },
+    { date:"2026-02-19", dept:"Final Assembly", summary:"Observed final SQTP assembly completion, testing procedure, and quality verification of the assembled unit.", learning:"Final inspection process and testing procedures after assembly completion." },
+    { date:"2026-02-20", dept:"Post-Assembly QC", summary:"Observed post-assembly quality inspection and documentation. Verified assembled SQTP unit against standards.", learning:"Post-assembly QC and maintaining reports and checklists." },
+    { date:"2026-02-21", dept:"SQTP Review", summary:"Reviewed complete SQTP process with supervisors. Studied common challenges, troubleshooting steps, and quality improvement methods.", learning:"Complete understanding of SQTP assembly from start to finish." },
+    { date:"2026-02-23", dept:"KK Pillar", summary:"Introduced to the KK Pillar of TPM under Santosh Sir. Studied its objectives, importance, and role in machine performance.", learning:"Basic concept and purpose of the KK Pillar in TPM." },
+    { date:"2026-02-24", dept:"KK Pillar", summary:"Studied major KK Pillar activities — monitoring machine conditions, identifying abnormalities, and following maintenance standards.", learning:"How regular monitoring reduces breakdowns and improves productivity." },
+    { date:"2026-02-25", dept:"KK Pillar", summary:"Observed practical KK Pillar implementation on shop floor. Operators checked machine parameters and maintained records.", learning:"How daily monitoring helps identify small issues before major failures." },
+    { date:"2026-02-26", dept:"Root Cause Analysis", summary:"Learned about identifying root causes of machine problems as part of KK Pillar. Studied preventive and corrective action methods.", learning:"Basic root cause analysis and preventive maintenance strategies." },
+    { date:"2026-02-27", dept:"KK Documentation", summary:"Observed documentation, inspection checklists, and monitoring sheets maintained under KK Pillar activities.", learning:"Importance of proper documentation in tracking machine performance." },
+    { date:"2026-02-28", dept:"KK Review", summary:"Reviewed all KK Pillar concepts with Santosh Sir and clarified implementation doubts.", learning:"Clear understanding of KK Pillar's contribution to quality improvement." },
+    { date:"2026-03-02", dept:"Machine Audit", summary:"Started machine auditing — inspecting cleanliness, safety guards, lubrication points, and working conditions per TPM standards.", learning:"How machine auditing identifies small issues early." },
+    { date:"2026-03-03", dept:"Machine Audit", summary:"Audited another section — checked 5S implementation, tool arrangement, safety labeling, and operator practices.", learning:"Workplace organization and 5S impact on efficiency and safety." },
+    { date:"2026-03-04", dept:"Machine Audit", summary:"Detailed machine inspection — maintenance tags, TPM checklists, and machine condition records reviewed.", learning:"Proper documentation supports machine reliability and TPM." },
+    { date:"2026-03-05", dept:"Safety Audit", summary:"Audited machines focusing on safety systems — emergency stop buttons, protective covers, and operator safety practices.", learning:"Safety systems are essential for accident prevention." },
+    { date:"2026-03-06", dept:"Machine Audit", summary:"Checked lubrication schedules, machine cleanliness, and tool management around machines.", learning:"Regular lubrication and housekeeping extend machine life." },
+    { date:"2026-03-07", dept:"Audit Review", summary:"Completed weekly machine audit and reviewed all observations with supervisor. Improvement points discussed.", learning:"Regular auditing supports TPM goals: zero breakdowns, improved productivity." },
+    { date:"2026-03-09", dept:"Jishu Hozen", summary:"Continued machine auditing using the Jishu Hozen Initial Cleaning Diagnosis Sheet — inspecting surroundings, cleanliness, tool arrangement per 5S.", learning:"Workplace organization and machine cleanliness improve safety." },
+    { date:"2026-03-10", dept:"Exterior Audit", summary:"Audited machine exterior — body casing, covers, guards, and machine bed. Observations recorded in checklist.", learning:"Regularly checking machine body parts prevents failures." },
+    { date:"2026-03-11", dept:"Electrical Audit", summary:"Inspected electrical components — control panels, wiring conditions, switches, and safety indicators.", learning:"Electrical inspection maintains machine reliability." },
+    { date:"2026-03-12", dept:"Lubrication Audit", summary:"Checked lubrication systems — oil levels, grease points, and lubrication schedules.", learning:"Proper lubrication reduces friction and improves machine life." },
+    { date:"2026-03-13", dept:"Abnormality Hunt", summary:"Identified abnormalities — dust accumulation, oil leakage, loose screws, and vibrations.", learning:"Early identification of abnormalities prevents major failures." },
+    { date:"2026-03-14", dept:"Audit Report", summary:"Completed machine audit and organized all findings into a machine condition report.", learning:"Machine auditing contributes to improved productivity and maintenance." },
+    { date:"2026-03-16", dept:"Defect Detection", summary:"Audited for minor defects — loose fasteners, abnormal noise, improper alignment. Compared with standard TPM checklist.", learning:"Comparing with standards helps early fault detection." },
+    { date:"2026-03-17", dept:"Safety Systems", summary:"Inspected emergency stop buttons, guards, and protective covers for safe machine operation.", learning:"Safety mechanisms prevent accidents and maintain safe conditions." },
+    { date:"2026-03-18", dept:"Performance Check", summary:"Checked machine performance — vibration, noise level, and smooth operation during running condition.", learning:"Abnormal sound and vibration indicate internal machine issues." },
+    { date:"2026-03-19", dept:"Maintenance Review", summary:"Reviewed maintenance practices — lubrication frequency, cleaning schedules, adherence to TPM standards.", learning:"Regular maintenance planning improves reliability and reduces downtime." },
+    { date:"2026-03-20", dept:"Defect Analysis", summary:"Analyzed audit findings and categorized defects by severity — minor, moderate, and critical.", learning:"Defect classification helps prioritize maintenance activities." },
+    { date:"2026-03-21", dept:"Audit Report", summary:"Prepared a detailed machine audit summary report with observations, defects, and improvement actions.", learning:"Proper documentation contributes to effective TPM implementation." },
+    { date:"2026-03-23", dept:"Alignment Audit", summary:"Machine audit focusing on alignment, loose parts, and abnormal noise during operation.", learning:"Systematic comparison reveals subtle machine degradation." },
+    { date:"2026-03-24", dept:"PPC Intro", summary:"Introduced to Production Planning and Control (PPC) Department. Learned its role in managing production, planning workflow, and coordinating departments.", learning:"Importance of PPC in smooth production flow and resource utilization." },
+    { date:"2026-03-25", dept:"Production Planning", summary:"Studied planning activities — planning, routing, scheduling, and loading of jobs.", learning:"Production planning organizes workflow and ensures timely task completion." },
+    { date:"2026-03-26", dept:"Routing & Scheduling", summary:"Observed routing and scheduling — how work sequence is decided and machines allocated for different jobs.", learning:"Proper routing and scheduling reduce delays and improve efficiency." },
+    { date:"2026-03-27", dept:"Production Control", summary:"Studied production control — dispatching, follow-up, and inspection processes in PPC.", learning:"Production control ensures proper execution of planned activities." },
+    { date:"2026-03-28", dept:"Dispatching", summary:"Observed dispatching and follow-up — job orders released and monitored until completion.", learning:"Continuous follow-up ensures timely completion and avoids delays." },
+    { date:"2026-03-30", dept:"Inspection & CA", summary:"Studied inspection and corrective actions in PPC. Observed how defects are identified and corrected.", learning:"Inspection and corrective actions improve quality and efficiency." },
+    { date:"2026-03-31", dept:"PPC Review", summary:"Reviewed overall PPC process — all stages from planning to control interconnected for smooth production.", learning:"Complete PPC workflow and its importance in industrial operations." },
+    { date:"2026-04-01", dept:"Vendor Follow-up", summary:"Started vendor follow-up — calling vendors and tracking job return status.", learning:"Importance of vendor coordination and communication in production flow." },
+    { date:"2026-04-02", dept:"Vendor Follow-up", summary:"Continued vendor follow-up and updated job return schedules.", learning:"Improved communication skills and tracking methods." },
+    { date:"2026-04-03", dept:"Infor LN Basics", summary:"Observed and learned basics of Infor LN ERP software used in PPC operations.", learning:"How ERP software supports production planning." },
+    { date:"2026-04-04", dept:"Purchase Orders", summary:"Learned how to create Purchase Orders (PO) in Infor LN system.", learning:"PO structure and procurement process." },
+    { date:"2026-04-06", dept:"BOM", summary:"Studied Bill of Materials (BOM) creation and structure in Infor LN.", learning:"Product structure and material requirements planning." },
+    { date:"2026-04-07", dept:"Planning Docs", summary:"Performed documentation related to weekly production planning.", learning:"How planning documents are prepared and structured." },
+    { date:"2026-04-08", dept:"Weekly Planning", summary:"Worked on weekly planning and checked target achievements vs actual production.", learning:"Comparison between planned and actual production." },
+    { date:"2026-04-09", dept:"PPC Meeting", summary:"Attended meeting with PPC team regarding production status and vendor updates.", learning:"Team coordination and reporting methods." },
+    { date:"2026-04-10", dept:"HOD Meeting", summary:"Attended PPC team and HOD meeting for planning and target setting.", learning:"Decision-making in production management." },
+    { date:"2026-04-11", dept:"Vendor Follow-up", summary:"Continued vendor follow-up ensuring timely job returns.", learning:"Improved follow-up efficiency and communication." },
+    { date:"2026-04-13", dept:"PPC Review", summary:"Reviewed all activities — follow-up, PO, BOM, and planning documents.", learning:"Overall understanding of PPC operations." },
+    { date:"2026-04-14", dept:"Routing in ERP", summary:"Started learning routing process in Infor LN — defining operation sequences linked to work centers and machines.", learning:"Routing plays a crucial role in production planning and workflow." },
+    { date:"2026-04-15", dept:"Routing Practice", summary:"Practiced creating and modifying routing in Infor LN — assigning operations, setting sequence numbers, linking to machines.", learning:"Proper routing optimizes production time and improves efficiency." },
+    { date:"2026-04-16", dept:"Production Entry", summary:"Learned production entry in Infor LN — recording actual production quantity and updating job status.", learning:"Accurate production data entry is key for tracking and planning." },
+    { date:"2026-04-17", dept:"Labour Contracts", summary:"Studied labour contract concepts — rate definition per job. Observed labour cost calculation based on job type and quantity.", learning:"Labour contracts help in cost estimation and financial planning." },
+    { date:"2026-04-18", dept:"Labour Contracts", summary:"Created labour contracts in Infor LN — entered job details, rates, and conditions.", learning:"Labour contracts are linked with production operations for cost tracking." },
+    { date:"2026-04-20", dept:"OP Cancellation", summary:"Learned how to cancel operations in Infor LN when a routing step is not needed or incorrectly added.", learning:"System flexibility allows modification of production processes." },
+    { date:"2026-04-21", dept:"Routing Updates", summary:"Studied routing modification in Infor LN — updating routing to reflect changes in production requirements.", learning:"Routing updates help adapt to manufacturing process changes." },
+    { date:"2026-04-22", dept:"DC Register", summary:"Learned about the Delivery Challan (DC) register — tracking materials sent to vendors and monitoring material movement.", learning:"DC register helps track outsourced operations and vendor transactions." },
+    { date:"2026-04-23", dept:"Inventory 360", summary:"Studied the Inventory 360 feature in Infor LN — on-hand, allocated, and on-order quantities for real-time visibility.", learning:"Inventory 360 provides real-time stock visibility for better decisions." },
+    { date:"2026-04-24", dept:"Planning PO Transfer", summary:"Learned planning purchase order transfer in Infor LN — transferring future material requirements based on planning data.", learning:"Planning ensures availability of raw materials for future production." },
+    { date:"2026-04-25", dept:"Final Review", summary:"Reviewed all concepts — routing, production entry, labour contracts, DC register, inventory management, and planning processes.", learning:"Clear understanding of how Infor LN supports PPC activities and production efficiency." }
+  ];
+
+  const grid = document.getElementById('logGrid');
+
+  entries.forEach((e, i) => {
+    const card = document.createElement('div');
+    card.className = 'log-card';
+    card.style.transitionDelay = `${(i % 6) * 60}ms`;
+    card.innerHTML = `
+      <div class="log-date">${e.date}</div>
+      <div class="log-dept">${e.dept}</div>
+      <div class="log-text">${e.summary}</div>
+      <div class="log-learn">💡 ${e.learning}</div>
+    `;
+    grid.appendChild(card);
+  });
+
+  // ── INTERSECTION OBSERVER ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // animate skill bars
+        const bar = entry.target.querySelector('.skill-bar');
+        if (bar) bar.style.width = bar.dataset.pct + '%';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.phase, .log-card, .skill-item').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
